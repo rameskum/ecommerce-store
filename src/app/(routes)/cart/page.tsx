@@ -1,21 +1,26 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import Container from '@/components/ui/container';
 import useCart from '@/hooks/use-cart';
-import { useEffect, useState } from 'react';
+
 import CartItem from './components/cart-item';
 import Summary from './components/summary';
 
+export const revalidate = 0;
+
 const CartPage = () => {
 	const [isMounted, setIsMounted] = useState(false);
+	const cart = useCart();
 
 	useEffect(() => {
 		setIsMounted(true);
 	}, []);
 
-	const cart = useCart();
-
-	if (!isMounted) return null;
+	if (!isMounted) {
+		return null;
+	}
 
 	return (
 		<div className="bg-white">
