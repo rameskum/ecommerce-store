@@ -1,10 +1,10 @@
 import { Billboard } from '@/types';
 
-interface BillboardProps {
+interface BillboardPageProps {
 	data: Billboard;
 }
 
-const Billboard: React.FC<BillboardProps> = ({ data }) => {
+const BillboardPage: React.FC<BillboardPageProps> = ({ data }) => {
 	return (
 		<div className="p-4 sm:p-6 lg:p-8 rounded-xl overflow-hidden">
 			<div
@@ -21,4 +21,4 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
 	);
 };
 
-export default Billboard;
+export default BillboardPage;
