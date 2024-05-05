@@ -10,8 +10,6 @@ const HomePage = async () => {
 	const billboard = await getBillboard(process.env.NEXT_PUBLIC_BILLBOARD_ID!);
 	const products = await getProducts({ isFeatured: true });
 
-	console.log(billboard);
-
 	return (
 		<Container>
 			<div className="space-yt-10 pb-10">
