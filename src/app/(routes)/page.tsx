@@ -7,8 +7,10 @@ import getProducts from '@/actions/get-products';
 export const revalidate = 0;
 
 const HomePage = async () => {
-	const billboard = await getBillboard('e6a62de1-331f-45d2-9384-98678c396f62');
+	const billboard = await getBillboard(process.env.NEXT_PUBLIC_BILLBOARD_ID!);
 	const products = await getProducts({ isFeatured: true });
+
+	console.log(billboard);
 
 	return (
 		<Container>
